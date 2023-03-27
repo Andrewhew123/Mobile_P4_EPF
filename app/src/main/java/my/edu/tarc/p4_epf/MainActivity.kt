@@ -3,6 +3,8 @@ package my.edu.tarc.p4_epf
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
@@ -55,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         //Navigate to Profile
         //Index 0 = Profile Picture
         val view = navView.getHeaderView(0);
+        val profilePic = view.findViewById<ImageView>(R.id.imageViewProfileImg)
+        val textViewName = view.findViewById<TextView>(R.id.textViewName)
+        val textViewEmail = view.findViewById<TextView>(R.id.textViewEmail)
+
+
         view.setOnClickListener {
             findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_profile)
             binding.drawerLayout.closeDrawers()
