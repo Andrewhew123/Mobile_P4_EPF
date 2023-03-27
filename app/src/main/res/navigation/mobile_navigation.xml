@@ -48,4 +48,9 @@
         android:name="my.edu.tarc.p4_epf.ui.about.AboutFragment"
         android:label="@string/action_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="my.edu.tarc.p4_epf.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
