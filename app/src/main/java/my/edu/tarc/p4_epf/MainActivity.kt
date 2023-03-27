@@ -57,9 +57,6 @@ class MainActivity : AppCompatActivity() {
         //Navigate to Profile
         //Index 0 = Profile Picture
         val view = navView.getHeaderView(0);
-        val profilePic = view.findViewById<ImageView>(R.id.imageViewProfileImg)
-        val textViewName = view.findViewById<TextView>(R.id.textViewName)
-        val textViewEmail = view.findViewById<TextView>(R.id.textViewEmail)
 
         view.setOnClickListener {
             findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.nav_profile)

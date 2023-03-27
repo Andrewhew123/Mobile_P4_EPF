@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContract
@@ -16,6 +17,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.navigation.NavigationView
 import my.edu.tarc.p4_epf.R
 import my.edu.tarc.p4_epf.databinding.FragmentProfileBinding
 import java.io.File
@@ -115,6 +117,18 @@ class ProfileFragment : Fragment(), MenuProvider {
                 putString(getString(R.string.email), email)
                 apply()
             }
+
+            val navigationView = requireActivity().findViewById<View>(R.id.nav_view) as NavigationView
+            val view = navigationView.getHeaderView(0)
+
+            val profilePic = view.findViewById<ImageView>(R.id.imageViewProfileImg)
+            val textViewName = view.findViewById<TextView>(R.id.textViewName)
+            val textViewEmail = view.findViewById<TextView>(R.id.textViewEmail)
+
+            //Change the profile img, name and email on sidebar menu
+            profilePic.setImageBitmap(readProfilePicture())
+            textViewName.text = name
+            textViewEmail.text = email
 
             Toast.makeText(requireContext(), getString(R.string.profile_save), Toast.LENGTH_SHORT).show()
 
